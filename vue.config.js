@@ -6,7 +6,7 @@ const buildDate = JSON.stringify(new Date().toLocaleString())
 const createThemeColorReplacerPlugin = require('./config/plugin.config')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const productionGzipExtensions = ['js', 'css']
-
+console.log(process.env.VUE_APP_BASE_API);
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
@@ -117,7 +117,8 @@ const vueConfig = {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
         // target: `https://ruoyi.setworld.net`,
-        target: `http://127.0.0.1:8080`,
+        target: `http://120.78.127.73:8080`,
+        // target: `http://127.0.0.1:8080`,
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
